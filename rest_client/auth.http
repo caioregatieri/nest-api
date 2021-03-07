@@ -1,0 +1,21 @@
+
+POST localhost:3000/auth/register
+
+content-type: application/json
+
+{
+    "name": "Caio Regatieri",
+    "email": "caio_fr_sp@hotmail.com",
+    "password": "12345678"
+}
+
+###
+
+POST localhost:3000/auth/login
+
+content-type: application/json
+
+{
+    "email": "caio_fr_sp@hotmail.com",
+    "password": "12345678"
+}

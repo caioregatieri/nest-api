@@ -1,4 +1,5 @@
-import { Product } from './models/product.models';
+import { User } from './models/user.model';
+import { Product } from './models/product.model';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -6,6 +7,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProductController } from './controllers/product/product.controller';
 import { UploadController } from './controllers/upload/upload.controller';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -17,9 +19,10 @@ import { UploadController } from './controllers/upload/upload.controller';
       username: process.env.TYPEORM_USERNAME,
       password: process.env.TYPEORM_PASSWORD,
       database: process.env.TYPEORM_DATABASE,
-      entities: [Product]
+      entities: [Product,User]
     }),
-    TypeOrmModule.forFeature([Product])
+    TypeOrmModule.forFeature([Product,User]),
+    AuthModule
   ],
   controllers: [AppController, ProductController, UploadController],
   providers: [AppService],

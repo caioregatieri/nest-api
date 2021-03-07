@@ -9,7 +9,7 @@ import {
     Put,
   } from '@nestjs/common';
   import { InjectRepository } from '@nestjs/typeorm';
-  import { Product } from 'src/models/product.models';
+  import { Product } from 'src/models/product.model';
   import { Repository } from 'typeorm';
 
 @Controller('product')
