@@ -36,3 +36,4 @@ lerna-debug.log*
 
 docker/db_data
 .env
+/uploads
